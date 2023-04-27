@@ -1,3 +1,6 @@
+#IntelliJ IDEA
+.idea/
+
 # History files
 .Rhistory
 .Rapp.history
@@ -20,6 +23,7 @@
 
 # RStudio files
 .Rproj.user/
+/*.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -41,6 +45,9 @@ vignettes/*.pdf
 
 # pkgdown site
 docs/
+
+# Generated manpages
+man/
 
 # translation temp files
 po/*~

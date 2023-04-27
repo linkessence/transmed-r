@@ -1,0 +1,10 @@
+^README\.Rmd$
+^LICENSE\.md$
+^\.idea$
+^\.Rproj\.user$
+^\.RData$
+^\.Rhistory$
+^data-raw$
+^\.gitignore$
+^\.git$
+^.*\.Rproj$
