@@ -2,7 +2,10 @@
 
 export(available_languages)
 export(init_transformers)
+export(make_hash_from_dictionary)
 export(med_translate_col_en_zh)
 export(med_translate_col_zh_en)
+export(med_translate_df_en_zh)
+export(med_translate_df_zh_en)
 export(med_translate_str_en_zh)
 export(med_translate_str_zh_en)

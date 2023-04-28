@@ -25438,3 +25438,37 @@ pH urine abnormal,尿 pH异常
 pH urine decreased,尿 pH 降低
 pH urine increased,尿 pH 升高
 pH urine normal,尿 pH 正常
+QD,每日一次
+QOD,隔日一次
+QAM,每日早上
+QPM,每日下午
+QHS,每日睡前
+Q4H,每四小时一次
+Q6H,每六小时一次
+Q8H,每八小时一次
+Q12H,每十二小时一次
+QID,每日四次
+TID,每日三次
+BID,每日两次
+PRN,必要时
+AC,饭前
+PC,饭后
+HS,睡前
+PO,口服
+IM,肌肉注射
+IV,静脉注射
+IVP,静脉推注
+SC,皮下注射
+ID,皮内注射
+IC,脑室内注射
+IH,腹腔注射
+SL,舌下含服
+NGT,鼻胃管
+GT,胃管
+PEG,胃造瘘管
+NG,鼻管
+NJ,鼻空肠管
+JT,空肠管
+ET,气管插管
+TT,气管切开
+PR,肛门给药

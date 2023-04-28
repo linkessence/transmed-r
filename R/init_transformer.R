@@ -5,7 +5,7 @@
 #' @param model_en_zh model for English to Chinese translation.
 #' @param model_zh_en model for Chinese to English translation.
 #'
-#' @return a dictionary of transformers.
+#' @return the transformer object.
 #'
 #' @export
 #'
@@ -23,4 +23,4 @@ init_transformers <- function (condaenv,
   return (c("en_zh" = trans_en_zh, "zh_en" = trans_zh_en))
 }
 
-# Path: R/init_transformers.R
+# Path: R/init_transformer.R

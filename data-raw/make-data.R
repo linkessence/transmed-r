@@ -13,7 +13,7 @@ for (i in seq_along(common_dict$en)) {
   med_dict_hash_zh_en[[common_dict$zh[i]]] <- common_dict$en[i]
 }
 
-save(med_dict_hash_en_zh, med_dict_hash_zh_en, file = "data/med_dict_hash.rda", compress = "xz")
+save(med_dict_hash_en_zh, med_dict_hash_zh_en, file = "R/sysdata.rda", compress = "xz")
 
 rm(med_dict_hash_en_zh, med_dict_hash_zh_en, med_dict, common_dict)
 

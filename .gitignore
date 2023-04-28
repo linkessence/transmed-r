@@ -46,9 +46,6 @@ vignettes/*.pdf
 # pkgdown site
 docs/
 
-# Generated manpages
-man/
-
 # translation temp files
 po/*~
 

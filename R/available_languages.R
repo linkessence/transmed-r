@@ -9,3 +9,5 @@
 available_languages <- function() {
   return(c("en", "zh"))
 }
+
+# Path: R/available_languages.R
