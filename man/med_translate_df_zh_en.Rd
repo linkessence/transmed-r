@@ -9,7 +9,7 @@ med_translate_df_zh_en(df, transformer, col_names = NULL, dict_map = NULL)
 \arguments{
 \item{df}{a data frame to translate.}
 
-\item{transformer}{functions to transform the string, initialized by \code{init_transformers}.}
+\item{transformer}{the transformer object, initialized by \code{init_transformer}.}
 
 \item{col_names}{a vector of column names to translate. If \code{NULL}, all columns will be translated.}
 

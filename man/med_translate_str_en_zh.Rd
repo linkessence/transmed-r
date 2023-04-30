@@ -9,7 +9,7 @@ med_translate_str_en_zh(str, transformer, dict_hash = NULL)
 \arguments{
 \item{str}{a string to be translated.}
 
-\item{transformer}{functions to transform the string, initialized by \code{init_transformers}.}
+\item{transformer}{the transformer object, initialized by \code{init_transformer}.}
 
 \item{dict_hash}{a customerized dictionary hash table, made by \code{make_hash_from_dictionary}.}
 }
