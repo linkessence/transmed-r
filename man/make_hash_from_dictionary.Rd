@@ -19,3 +19,17 @@ a hash table of the dictionary.
 \description{
 \code{make_hash_from_dictionary} makes the hash table from a customerized dictionary.
 }
+\details{
+The dictionary should be a data frame with at least two columns. One column is the source terms
+and another column is the target terms.  You can write the dictionary in a csv file and read it
+via \code{read.csv}.  To make the hash table, the column names of the source terms and the target
+terms should be specified in the parameters \code{from_column} and \code{to_column}.
+}
+\examples{
+dictionary <- data.frame(english = c("apple", "banana", "orange"),
+                         chinese = c("苹果", "香蕉", "橙子"))
+
+hash_en_zh <- make_hash_from_dictionary(dictionary, "english", "chinese")
+hash_zh_en <- make_hash_from_dictionary(dictionary, "chinese", "english")
+
+}

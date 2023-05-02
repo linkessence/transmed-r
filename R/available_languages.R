@@ -3,7 +3,10 @@
 #' \code{available_languages} list all supported languages.
 #' 
 #' @return Returns the list of supported languages.
-#' 
+#'
+#' @examples
+#' available_languages()
+#'
 #' @export
 
 available_languages <- function() {

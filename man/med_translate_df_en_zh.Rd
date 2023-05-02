@@ -9,7 +9,8 @@ med_translate_df_en_zh(df, transformer, col_names = NULL, dict_map = NULL)
 \arguments{
 \item{df}{a data frame to translate.}
 
-\item{transformer}{the transformer object, initialized by \code{init_transformer}.}
+\item{transformer}{the transformer object, initialized by \code{init_transformer}. if NULL,
+translation will be performed by dictionaries only.}
 
 \item{col_names}{a vector of column names to translate. If \code{NULL}, all columns will be translated.}
 
@@ -20,4 +21,47 @@ a new data frame with Chinese translation.
 }
 \description{
 \code{med_translate_df_en_zh} translates a data frame from English to Chinese.
+}
+\details{
+\code{med_translate_df_en_zh} translates a data frame from English to Chinese. It returns a new data frame
+with translation.  The number of rows and columns of the output data frame, along with column names, will be
+the same as the input data frame.
+
+You may select which columns to be translated with the \code{col_names} parameter.  If the parameter
+\code{col_names} is NULL, the function checkes the data type of each column first.  Only character columns
+are translated; columns with data type other than \code{character} will be copied.
+
+You may also use customized dictionaries for some of the columns.  To use customerize dictionaries,
+you need to convert them into hash tables with the \code{make_hash_from_dictionary} first, then make a
+named vector of \code{Column name, Hash table} as the parameter \code{dict_map}.
+}
+\examples{
+# Initialize the transformer:
+transformer <- init_transformer("C:/Users/<MyUserName>/Anaconda3/envs/transmed")
+
+# Translate a data frame:
+df <- data.frame(
+  Name = c("John", "Mary"),
+  Age = c(29, 32),
+  Gender = c("Male", "Female"),
+  Disease = c("Enteritis", "Gastritis")
+)
+
+med_translate_df_en_zh(df, transformer, col_names = c("Gender", "Disease"))
+
+# Translate with customerized dictionaries:
+dict_gender <- data.frame(en = c("Male", "Female"), zh = c("男性", "女性"))
+dict_gender_hash <- make_hash_from_dictionary(dict_gender, from_column="en", to_column="zh")
+
+dict_disease <- data.frame(en = c("Enteritis", "Gastritis"), zh = c("肠炎", "胃炎"))
+dict_disease_hash <- make_hash_from_dictionary(dict_disease, from_column="en", to_column="zh")
+
+med_translate_df_en_zh(df,
+                       transformer,
+                       col_names = c("Gender", "Disease"),
+                       dict_map = c(Gender = dict_gender, Disease = dict_disease))
+
+}
+\seealso{
+med_translate_df_zh_en, init_transformer, make_hash_from_dictionary
 }

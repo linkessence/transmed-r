@@ -2,9 +2,44 @@
 #'
 #' \code{med_translate_col_zh_en} translates a data column from Chinese to English.
 #' @param col a data column to translate.
-#' @param transformer the transformer object, initialized by \code{init_transformer}.
+#' @param transformer the transformer object, initialized by \code{init_transformer}. if NULL,
+#'        translation will be performed by dictionaries only.
 #' @param dict_hash a customerized dictionary hash table, made by \code{make_hash_from_dictionary}.
 #' @return a new data frame with English translation, and confidence.
+#'
+#' #' @details
+#' \code{med_translate_col_zh_en} translates a data column, or a vector of strings, from Chinese to English.
+#' It returns a data frame with two named columns.  The first column named \code{translated} contains
+#' the translated strings, the second column named \code{confidence} contains confidence numbers of each
+#' translated string.
+#'
+#' \itemize{
+#'      \item \code{confidence} = 3:  Translated with customerized dictionary.
+#'      \item \code{confidence} = 2:  Translated with system dictionary in the package.
+#'      \item \code{confidence} = 1:  Translated as a free text with transformer.
+#'      \item \code{confidence} = 0:  Not translated.  The \code{translated} is copied from the input string.
+#' }
+#'
+#' Same as \code{med_translate_str_zh_en}, the \code{med_translate_col_zh_en} also accepts customerized
+#' dictionary, which is a hash table generated from \code{make_hash_from_dictionary}.
+#'
+#' @examples
+#' # Initialize the transformer:
+#' transformer <- init_transformer("C:/Users/<MyUserName>/Anaconda3/envs/transmed")
+#'
+#' # Translate a vector of string:
+#' src_data = c("肠炎", "胃炎")
+#' med_translate_col_zh_en(src_data, transformer)
+#'
+#' # Translate a vector of string with customerized dictionary:
+#' dict <- data.frame(en = c("Enteritis", "Gastritis"), zh = c("肠炎", "胃炎"))
+#' dict_hash <- make_hash_from_dictionary(dict, from_column="zh", to_column="en")
+#' med_translate_col_zh_en(src_data, transformer, dict_hash)
+#'
+#' # Translate a vector of string with customerized dictionary, and prohibit free-text translation:
+#' med_translate_col_zh_en(src_data, NULL, dict_hash)
+#'
+#' @seealso med_translate_col_en_zh, med_translate_str_zh_en, init_transformer, make_hash_from_dictionary
 #'
 #' @export
 #'

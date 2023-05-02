@@ -12,3 +12,7 @@ Returns the list of supported languages.
 \description{
 \code{available_languages} list all supported languages.
 }
+\examples{
+available_languages()
+
+}
