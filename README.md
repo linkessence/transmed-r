@@ -19,7 +19,7 @@ following commands in the Anaconda terminal:
 
 ``` bash
 conda update conda
-conda create -n transmed python==3.10
+conda create -n transmed python==3.10.11
 conda activate transmed
 conda install numpy scipy scikit-learn ipython
 conda install pytorch -c pytorch
@@ -87,8 +87,8 @@ rm(transformer)
 library(transmed)
 transformer <- init_transformer("C:/Users/MyUserName/Anaconda3/envs/transmed")
 
-med_translate_en_to_zh("Enteritis", transformer)
-med_translate_zh_to_en("肠炎", transformer)
+med_translate_str_en_to_zh("Enteritis", transformer)
+med_translate_str_zh_to_en("肠炎", transformer)
 ```
 
 2.  To translate a free text:
@@ -97,8 +97,8 @@ med_translate_zh_to_en("肠炎", transformer)
 library(transmed)
 transformer <- init_transformer("C:/Users/MyUserName/Anaconda3/envs/transmed")
 
-med_translate_en_zh("Enteritis is an inflammation of your small intestine. It’s most often caused by eating or drinking things that are contaminated with bacteria or viruses.", transformer)
-med_translate_zh_en("肠炎是小肠的炎症。它最常见的原因是吃或喝被细菌或病毒污染的东西。", transformer)
+med_translate_str_en_zh("Enteritis is an inflammation of your small intestine. It’s most often caused by eating or drinking things that are contaminated with bacteria or viruses.", transformer)
+med_translate_str_zh_en("肠炎是小肠的炎症。它最常见的原因是吃或喝被细菌或病毒污染的东西。", transformer)
 ```
 
 3.  To translate a vector of terms:
