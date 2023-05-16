@@ -87,8 +87,8 @@ rm(transformer)
 library(transmed)
 transformer <- init_transformer("C:/Users/MyUserName/Anaconda3/envs/transmed")
 
-med_translate_str_en_to_zh("Enteritis", transformer)
-med_translate_str_zh_to_en("肠炎", transformer)
+med_translate_str_en_zh("Enteritis", transformer)
+med_translate_str_zh_en("肠炎", transformer)
 ```
 
 2.  To translate a free text:
@@ -107,8 +107,8 @@ med_translate_str_zh_en("肠炎是小肠的炎症。它最常见的原因是吃�
 library(transmed)
 transformer <- init_transformer("C:/Users/MyUserName/Anaconda3/envs/transmed")
 
-med_translate_col_en_to_zh(c("Enteritis", "Gastritis"), transformer)
-med_translate_col_zh_to_en(c("肠炎", "胃炎"), transformer)
+med_translate_col_en_zh(c("Enteritis", "Gastritis"), transformer)
+med_translate_col_zh_en(c("肠炎", "胃炎"), transformer)
 ```
 
 4.  To translate a data frame with multiple columns:
@@ -124,7 +124,7 @@ df <- data.frame(
   Disease = c("Enteritis", "Gastritis")
 )
 
-med_translate_df_en_to_zh(df, transformer, col_names = c("Gender", "Disease"))
+med_translate_df_en_zh(df, transformer, col_names = c("Gender", "Disease"))
 ```
 
 ## Use your own dictionary
@@ -157,7 +157,7 @@ Finally, you can use the hash table as the `dict_hash` parameter, in any
 of the `med_translate_xxx` functions. For example, you can run
 
 ``` r
-med_translate_str_en_to_zh("Enteritis", transformer, dict_hash = hash_en_zh)
+med_translate_str_en_zh("Enteritis", transformer, dict_hash = hash_en_zh)
 ```
 
 ## Prohibits free-text translation
@@ -167,5 +167,5 @@ and use the dictionary only. In this case, just set the `transformer`
 parameter to `NULL`. For example, you can run
 
 ``` r
-med_translate_col_en_to_zh(c("Enteritis", "Gastritis"), transformer = NULL)
+med_translate_col_en_zh(c("Enteritis", "Gastritis"), transformer = NULL)
 ```
